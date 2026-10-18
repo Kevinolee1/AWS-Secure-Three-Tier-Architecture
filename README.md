@@ -28,7 +28,7 @@ The next configuration step establishes private routing for the application subn
 
 ## Step 3 – Associate Application Subnet with Private Route Table
 
-![Private Route Table Associations](images/03-associate-application-private-route-table.png)
+![Private Route Table Associations](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/bea17ae4de9f1522bc68e3545b320730d695d68a/Screenshot%202026-10-18%20131424.png)
 
 **Figure 3 – Private Subnet Route Table Associations:** I configured the `CloudSecurity-Private-RT` route table to serve both the application and database subnets within `CloudSecurity-VPC`.
 
