@@ -4,7 +4,7 @@ Designed and deployed a secure AWS three-tier architecture using Amazon VPC, EC2
 
 ## Step 1 – Verify Existing AWS VPC Infrastructure
 
-![Verify Existing VPC Infrastructure](images/01-verify-existing-vpc-infrastructure.png)
+![Verify Existing VPC Infrastructure](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/5e4812171242df0caa0e709e661a024698f1a1a3/Screenshot%202026-10-18%20130659.png)
 
 **Figure 1 – Existing AWS VPC Infrastructure:** I verified the `CloudSecurity-VPC` environment in the AWS Management Console before beginning the three-tier architecture deployment.
 
