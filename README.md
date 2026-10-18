@@ -78,7 +78,7 @@ The security group configuration was verified successfully. End-to-end connectiv
 
 ![Default Network ACL Inbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/eda5b945a18604add842e71357f3eaf761540e94/Screenshot%202026-10-18%20143514.png)
 
-![Default Network ACL Outbound Rules](images/07-default-nacl-outbound-rules.png)
+![Default Network ACL Outbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/c9a4db12d8ba1fc63a9016e43adabd101042be13/Screenshot%202026-10-18%20144925.png)
 
 **Figure 7 – Default Network ACL Security Verification:** Reviewed the inbound and outbound rules of the default Network ACL associated with `CloudSecurity-Public-Subnet` and `CloudSecurity-App-Subnet`.
 
