@@ -66,7 +66,7 @@ AWS also confirmed that the application's outbound security group rules were suc
 
 ## Step 6 – Verify Database Security Group Access
 
-![Database Security Group Verification](images/06-verify-database-security-group.png)
+![Database Security Group Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/3311eb78734b6091a3c7bb206f87e234fc7c2d18/Screenshot%202026-10-18%20142416.png)
 
 **Figure 6 – Database Security Group Access Verification:** Verified that `CloudSecurity-DB-SG` allows inbound PostgreSQL traffic on TCP port `5432` exclusively from `CloudSecurity-App-SG`.
 
