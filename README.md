@@ -62,3 +62,14 @@ Additional outbound permissions will be configured when establishing secure appl
 This configuration restricts application access to resources associated with the web-tier security group instead of allowing unrestricted public access.
 
 AWS also confirmed that the application's outbound security group rules were successfully updated. The outbound destination and database permissions require separate verification.
+
+
+## Step 6 – Verify Database Security Group Access
+
+![Database Security Group Verification](images/06-verify-database-security-group.png)
+
+**Figure 6 – Database Security Group Access Verification:** Verified that `CloudSecurity-DB-SG` allows inbound PostgreSQL traffic on TCP port `5432` exclusively from `CloudSecurity-App-SG`.
+
+This configuration establishes security-group-based access control between the application and database tiers, restricting direct database access from the web tier and external networks.
+
+The security group configuration was verified successfully. End-to-end connectivity testing remains a separate validation step.
