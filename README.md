@@ -55,7 +55,7 @@ Additional outbound permissions will be configured when establishing secure appl
 
 ## Step 5 – Verify Application Tier Security Group
 
-![Application Security Group Verification](images/05-verify-application-security-group.png)
+![Application Security Group Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/35e5a97fcbb4ed1f57aac83ad74e73676b52866e/Screenshot%202026-10-18%20134332.png)
 
 **Figure 5 – Application Tier Security Verification:** I verified that `CloudSecurity-App-SG` permits inbound TCP traffic on port `8080` from the authorized `CloudSecurity-Web-SG`.
 
