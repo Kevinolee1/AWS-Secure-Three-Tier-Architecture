@@ -100,7 +100,7 @@ The ACL will be associated with the application subnet after its inbound and out
 
 ## Step 9 – Configure Application Network ACL Inbound Rules
 
-![Application Network ACL Inbound Rules](images/09-app-nacl-inbound-rules.png)
+![Application Network ACL Inbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/65afb7f39197a958f4b3fbb30041b003f48ccbde/Screenshot%202026-10-18%20145602.png)
 
 **Figure 9 – Application Network ACL Inbound Configuration:** Configured the `CloudSecurity-App-NACL` with an inbound rule permitting TCP traffic on port `8080` from the public web subnet (`10.0.1.0/24`).
 
