@@ -120,7 +120,7 @@ The existing rule `100` continues to permit web-to-application traffic on TCP po
 
 ## Step 10B – Configure Application Network ACL Return Traffic
 
-![Application Network ACL Return Traffic](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/8acb81384a68c53f1ba5d23a8edf88c8dd3f8ca1/Screenshot%202026-10-18%20185615.png)
+![Application Network ACL Return Traffic](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/8c6d85843a89dab7297f698cd322f5837ad86e56/Screenshot%202026-10-18%20185615.png)
 
 **Figure 10B – Application Network ACL Inbound and Return Traffic:** Configured `CloudSecurity-App-NACL` with rule `100` allowing TCP port `8080` from the web subnet (`10.0.1.0/24`) and rule `110` allowing ephemeral TCP ports `1024–65535` from the database subnet (`10.0.2.0/24`).
 
