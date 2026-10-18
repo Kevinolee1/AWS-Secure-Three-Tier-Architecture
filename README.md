@@ -43,7 +43,7 @@ The application and database tiers will use dedicated security groups to enforce
 
 ## Step 4 – Create Application Tier Security Group
 
-![Application Tier Security Group](images/04-create-application-security-group.png)
+![Application Tier Security Group](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/eb31905b4ab1816dfd59f85405a7852ffbbea997/Screenshot%202026-10-18%20132604.png)
 
 **Figure 4 – Application Security Group Configuration:** I created `CloudSecurity-App-SG` within `CloudSecurity-VPC` to establish network access controls for the application tier.
 
