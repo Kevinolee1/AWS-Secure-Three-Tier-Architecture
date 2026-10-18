@@ -73,3 +73,47 @@ AWS also confirmed that the application's outbound security group rules were suc
 This configuration establishes security-group-based access control between the application and database tiers, restricting direct database access from the web tier and external networks.
 
 The security group configuration was verified successfully. End-to-end connectivity testing remains a separate validation step.
+
+## Step 7 – Verify Default Network ACL Inbound and Outbound Rules
+
+![Default Network ACL Inbound Rules](images/07-default-nacl-inbound-rules.png)
+
+![Default Network ACL Outbound Rules](images/07-default-nacl-outbound-rules.png)
+
+**Figure 7 – Default Network ACL Security Verification:** Reviewed the inbound and outbound rules of the default Network ACL associated with `CloudSecurity-Public-Subnet` and `CloudSecurity-App-Subnet`.
+
+Verified that rule `100` permits all inbound and outbound IPv4 traffic (`0.0.0.0/0`), followed by the default deny rule.
+
+The assessment confirmed that both subnets share a permissive Network ACL without subnet-specific traffic restrictions. Although security groups provide resource-level access controls, the default ACL does not independently enforce network segmentation.
+
+To strengthen the three-tier architecture, I proceeded with implementing a dedicated application Network ACL to restrict unauthorized traffic, enforce controlled communication between network tiers, and support defense-in-depth security.
+
+## Step 8 – Create Application Network ACL
+
+![Create Application Network ACL](images/08-create-application-network-acl.png)
+
+**Figure 8 – Application Network ACL Creation:** Created a dedicated network access control list named `CloudSecurity-App-NACL` to provide subnet-level traffic filtering for the application tier.
+
+The custom Network ACL will be configured to permit required application traffic and return traffic while denying unauthorized network connections.
+
+The ACL will be associated with the application subnet after its inbound and outbound rules are configured.
+
+## Step 9 – Configure Application Network ACL Inbound Rules
+
+![Application Network ACL Inbound Rules](images/09-app-nacl-inbound-rules.png)
+
+**Figure 9 – Application Network ACL Inbound Configuration:** Configured the `CloudSecurity-App-NACL` with an inbound rule permitting TCP traffic on port `8080` from the public web subnet (`10.0.1.0/24`).
+
+Rule `100` allows the web tier to send application requests to the application subnet, while the default deny rule blocks unmatched inbound traffic.
+
+This configuration supports network segmentation and defense-in-depth security within the three-tier AWS architecture.
+
+## Step 10 – Configure Application Network ACL Return Traffic
+
+![Application Network ACL Return Traffic](images/10-app-nacl-return-traffic.png)
+
+**Figure 10 – Application Network ACL Return Traffic Configuration:** Added inbound rule `110` to `CloudSecurity-App-NACL` to permit TCP traffic on ephemeral ports `1024–65535` from the database subnet (`10.0.2.0/24`).
+
+This rule supports return traffic from the database tier to the application tier because AWS Network ACLs are stateless and require explicit rules for both directions of communication.
+
+The existing rule `100` continues to permit web-to-application traffic on TCP port `8080`, while the default deny rule blocks unmatched inbound traffic.
