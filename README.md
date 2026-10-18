@@ -90,7 +90,7 @@ To strengthen the three-tier architecture, I proceeded with implementing a dedic
 
 ## Step 8 – Create Application Network ACL
 
-![Create Application Network ACL](images/08-create-application-network-acl.png)
+![Create Application Network ACL](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/21502fe5265ca9488d84c16ebc77d6f698697bba/Screenshot%202026-10-18%20144430.png)
 
 **Figure 8 – Application Network ACL Creation:** Created a dedicated network access control list named `CloudSecurity-App-NACL` to provide subnet-level traffic filtering for the application tier.
 
