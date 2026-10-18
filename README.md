@@ -110,7 +110,7 @@ This configuration supports network segmentation and defense-in-depth security w
 
 ## Step 10A – Configure Application Network ACL Return Traffic
 
-![Application Network ACL Return Traffic](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/75b7ae9798adf98ed344982a73fa2f85b2fafd07/Screenshot%202026-10-18%20150231.png)
+![Application Network ACL Return Traffic](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/57be298a761cc7959dfe3c3f278e1e70817cac8e/Screenshot%202026-10-18%20185553.png)
 
 **Figure 10A – Application Network ACL Return Traffic Configuration:** Added inbound rule `110` to `CloudSecurity-App-NACL` to permit TCP traffic on ephemeral ports `1024–65535` from the database subnet (`10.0.2.0/24`).
 
