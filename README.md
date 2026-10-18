@@ -16,7 +16,7 @@ This existing infrastructure provides the foundation for implementing a secure t
 
 ## Step 2 – Create Private Application Subnet
 
-![Create Private Application Subnet](images/02-create-private-application-subnet.png)
+![Create Private Application Subnet](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/118aa4adf9c9f43fde3a8cae680d6acee79dd02c/Screenshot%202026-10-18%20131017.png)
 
 **Figure 2 – Private Application Subnet Creation:** I created a new subnet named `CloudSecurity-App-Subnet` within the existing `CloudSecurity-VPC` using the IPv4 CIDR block `10.0.3.0/24`.
 
