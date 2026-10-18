@@ -76,7 +76,7 @@ The security group configuration was verified successfully. End-to-end connectiv
 
 ## Step 7 – Verify Default Network ACL Inbound and Outbound Rules
 
-![Default Network ACL Inbound Rules](images/07-default-nacl-inbound-rules.png)
+![Default Network ACL Inbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/eda5b945a18604add842e71357f3eaf761540e94/Screenshot%202026-10-18%20143514.png)
 
 ![Default Network ACL Outbound Rules](images/07-default-nacl-outbound-rules.png)
 
