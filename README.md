@@ -108,7 +108,7 @@ Rule `100` allows the web tier to send application requests to the application s
 
 This configuration supports network segmentation and defense-in-depth security within the three-tier AWS architecture.
 
-## Step 10 – Configure Application Network ACL Return Traffic
+## Step 10A – Configure Application Network ACL Return Traffic
 
 ![Application Network ACL Return Traffic](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/75b7ae9798adf98ed344982a73fa2f85b2fafd07/Screenshot%202026-10-18%20150231.png)
 
@@ -117,3 +117,13 @@ This configuration supports network segmentation and defense-in-depth security w
 This rule supports return traffic from the database tier to the application tier because AWS Network ACLs are stateless and require explicit rules for both directions of communication.
 
 The existing rule `100` continues to permit web-to-application traffic on TCP port `8080`, while the default deny rule blocks unmatched inbound traffic.
+
+## Step 10 – Configure Application Network ACL Return Traffic
+
+![Application Network ACL Return Traffic](images/10-app-nacl-return-traffic.png)
+
+**Figure 10B – Application Network ACL Inbound and Return Traffic:** Configured `CloudSecurity-App-NACL` with rule `100` allowing TCP port `8080` from the web subnet (`10.0.1.0/24`) and rule `110` allowing ephemeral TCP ports `1024–65535` from the database subnet (`10.0.2.0/24`).
+
+These rules support communication between the web, application, and database tiers while accounting for the stateless behavior of AWS Network ACLs. The default deny rule blocks unmatched inbound traffic.
+
+Verified that both rules were saved successfully in the AWS VPC console.
