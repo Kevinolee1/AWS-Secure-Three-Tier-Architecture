@@ -174,7 +174,7 @@ Verified that AWS successfully saved the updated outbound rule.
 
 ## Step 15 – Configure Web Security Group Outbound Rules
 
-![Web Security Group Outbound Rules](images/15-web-sg-outbound-rules.png)
+![Web Security Group Outbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/c1cf7b5075a41192488cc7abce33ca975dfe7f07/Screenshot%202026-10-18%20195456.png)
 
 **Figure 15 – Web Security Group Outbound Configuration:** Updated `CloudSecurity-Web-SG` to allow outbound TCP traffic on port `8080` exclusively to `CloudSecurity-App-SG`.
 
