@@ -138,7 +138,7 @@ Verified that unmatched outbound traffic is denied by the default Network ACL ru
 
 ## Step 12 – Associate Application Network ACL with Application Subnet
 
-![Application Network ACL Subnet Association](images/12-app-nacl-subnet-association.png)
+![Application Network ACL Subnet Association](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/1d5249863e5c63159d612db5d170137ca141851a/Screenshot%202026-10-18%20192842.png)
 
 **Figure 12 – Application Network ACL Subnet Association:** Successfully associated the custom `CloudSecurity-App-NACL` with `CloudSecurity-App-Subnet` (`10.0.3.0/24`) within `CloudSecurity-VPC`.
 
