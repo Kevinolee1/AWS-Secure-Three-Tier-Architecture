@@ -206,7 +206,7 @@ Confirmed that the database security group contains only one inbound rule, suppo
 
 ## Step 18 – Verify Database Security Group Outbound Rules
 
-![Database Security Group Outbound Verification](images/18-db-sg-outbound-verification.png)
+![Database Security Group Outbound Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/0c2adfff98fa8795404b6aec89421a630bb27bef/Screenshot%202026-10-18%20202948.png)
 
 **Figure 18 – Database Security Group Outbound Verification:** Verified that `CloudSecurity-DB-SG` contains zero outbound security group rules, preventing new database-initiated outbound connections through this security group.
 
