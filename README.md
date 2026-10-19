@@ -228,7 +228,7 @@ Confirmed that the application security group contains only one outbound rule, s
 
 ## Step 20 – Verify Three-Tier AWS VPC Network Architecture
 
-![Three-Tier AWS VPC Architecture](images/20-three-tier-vpc-architecture.png)
+![Three-Tier AWS VPC Architecture](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/700da3bc87586da638439641c59bf711142e7ff4/Screenshot%202026-10-18%20203830.png)
 
 **Figure 20 – Three-Tier AWS VPC Architecture Verification:** Reviewed the AWS VPC Resource Map to verify the network architecture deployed within `CloudSecurity-VPC` (`10.0.0.0/16`).
 
