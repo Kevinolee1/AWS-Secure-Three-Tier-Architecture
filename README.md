@@ -162,7 +162,7 @@ Verified that the updated inbound rule was saved successfully in the AWS VPC con
 
 ## Step 14 – Configure Database Network ACL Outbound Return Traffic
 
-![Database Network ACL Outbound Rules](images/14-db-nacl-outbound-rules.png)
+![Database Network ACL Outbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/c0583e44a73fe81b7f76430cc0eb0100bd741bae/Screenshot%202026-10-18%20194142.png)
 
 **Figure 14 – Database Network ACL Outbound Configuration:** Updated `CloudSecurity-Private-NACL` to allow outbound TCP traffic on ephemeral ports `1024–65535` to the application subnet (`10.0.3.0/24`).
 
