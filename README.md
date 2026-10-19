@@ -150,7 +150,7 @@ Verified that the AWS console displays the correct subnet association.
 
 ## Step 13 – Configure Database Network ACL Inbound Rules
 
-![Database Network ACL Inbound Rules](images/13-db-nacl-inbound-rules.png)
+![Database Network ACL Inbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/30616f1974946e94bc6d4b35231593201841e750/Screenshot%202026-10-18%20193801.png)
 
 **Figure 13 – Database Network ACL Inbound Configuration:** Updated `CloudSecurity-Private-NACL` to permit PostgreSQL traffic on TCP port `5432` from the application subnet (`10.0.3.0/24`).
 
