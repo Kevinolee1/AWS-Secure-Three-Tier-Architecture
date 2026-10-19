@@ -218,7 +218,7 @@ Confirmed that the AWS console displays no outbound security group rules.
 
 ## Step 19 – Verify Application Security Group Outbound Rules
 
-![Application Security Group Outbound Verification](images/19-app-sg-outbound-verification.png)
+![Application Security Group Outbound Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/fb7375683536c297f3fba3fa7133d5ac464d6747/Screenshot%202026-10-18%20203422.png)
 
 **Figure 19 – Application Security Group Outbound Verification:** Verified that `CloudSecurity-App-SG` permits outbound PostgreSQL traffic on TCP port `5432` exclusively to `CloudSecurity-DB-SG`.
 
