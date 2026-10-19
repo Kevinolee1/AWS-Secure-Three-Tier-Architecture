@@ -184,4 +184,62 @@ This configuration applies the principle of least privilege by restricting outbo
 
 Verified that the AWS console displays only the intended outbound security group rule.
 
+## Step 16 – Verify Application Security Group Inbound Rules
 
+![Application Security Group Inbound Verification](images/16-app-sg-inbound-verification.png)
+
+**Figure 16 – Application Security Group Inbound Verification:** Verified that `CloudSecurity-App-SG` permits inbound TCP traffic on port `8080` exclusively from `CloudSecurity-Web-SG`.
+
+The security group uses a security group reference instead of an unrestricted IP address range, limiting application access to resources associated with the authorized web tier.
+
+Confirmed that only one inbound rule exists, supporting least-privilege access control and network segmentation within the three-tier AWS architecture.
+
+## Step 17 – Verify Database Security Group Inbound Rules
+
+![Database Security Group Inbound Verification](images/17-db-sg-inbound-verification.png)
+
+**Figure 17 – Database Security Group Inbound Verification:** Verified that `CloudSecurity-DB-SG` permits inbound PostgreSQL traffic on TCP port `5432` exclusively from `CloudSecurity-App-SG`.
+
+The configuration uses a security group reference to restrict database access to authorized application-tier resources instead of allowing unrestricted IP-based connections.
+
+Confirmed that the database security group contains only one inbound rule, supporting least-privilege access control, database isolation, and defense-in-depth security within the three-tier AWS architecture.
+
+## Step 18 – Verify Database Security Group Outbound Rules
+
+![Database Security Group Outbound Verification](images/18-db-sg-outbound-verification.png)
+
+**Figure 18 – Database Security Group Outbound Verification:** Verified that `CloudSecurity-DB-SG` contains zero outbound security group rules, preventing new database-initiated outbound connections through this security group.
+
+Because AWS security groups are stateful, response traffic associated with permitted inbound PostgreSQL connections is automatically allowed without requiring an explicit outbound rule.
+
+This configuration supports least-privilege access control, database isolation, and defense-in-depth security within the three-tier AWS architecture.
+
+Confirmed that the AWS console displays no outbound security group rules.
+
+## Step 19 – Verify Application Security Group Outbound Rules
+
+![Application Security Group Outbound Verification](images/19-app-sg-outbound-verification.png)
+
+**Figure 19 – Application Security Group Outbound Verification:** Verified that `CloudSecurity-App-SG` permits outbound PostgreSQL traffic on TCP port `5432` exclusively to `CloudSecurity-DB-SG`.
+
+The rule uses a security group reference instead of a broad IP address range, restricting application-initiated database connections to resources associated with the authorized database security group.
+
+Confirmed that the application security group contains only one outbound rule, supporting least-privilege access control, controlled database communication, and defense-in-depth security within the three-tier AWS architecture.
+
+## Step 20 – Verify Three-Tier AWS VPC Network Architecture
+
+![Three-Tier AWS VPC Architecture](images/20-three-tier-vpc-architecture.png)
+
+**Figure 20 – Three-Tier AWS VPC Architecture Verification:** Reviewed the AWS VPC Resource Map to verify the network architecture deployed within `CloudSecurity-VPC` (`10.0.0.0/16`).
+
+The architecture consists of three network tiers:
+
+- **Public Web Tier:** `CloudSecurity-Public-Subnet` (`10.0.1.0/24`), associated with `CloudSecurity-Public-RT` and connected to `CloudSecurity-IGW`.
+- **Private Application Tier:** `CloudSecurity-App-Subnet` (`10.0.3.0/24`), associated with `CloudSecurity-Private-RT`.
+- **Private Database Tier:** `CloudSecurity-Private-Subnet` (`10.0.2.0/24`), associated with `CloudSecurity-Private-RT`.
+
+Configured dedicated security groups and Network ACLs to define controlled communication between the web, application, and database tiers using TCP ports `8080` and `5432`.
+
+Verified the VPC resource associations through the AWS console. Live application connectivity testing was not performed as part of this configuration review.
+
+The architecture demonstrates network segmentation, least-privilege access controls, private subnet isolation, and defense-in-depth security principles.
