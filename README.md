@@ -186,7 +186,7 @@ Verified that the AWS console displays only the intended outbound security group
 
 ## Step 16 – Verify Application Security Group Inbound Rules
 
-![Application Security Group Inbound Verification](images/16-app-sg-inbound-verification.png)
+![Application Security Group Inbound Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/867c4fa5d989c0a8b1a07aa4c8c94d570e1e90c9/Screenshot%202026-10-18%20202321.png)
 
 **Figure 16 – Application Security Group Inbound Verification:** Verified that `CloudSecurity-App-SG` permits inbound TCP traffic on port `8080` exclusively from `CloudSecurity-Web-SG`.
 
