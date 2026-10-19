@@ -243,3 +243,15 @@ Configured dedicated security groups and Network ACLs to define controlled commu
 Verified the VPC resource associations through the AWS console. Live application connectivity testing was not performed as part of this configuration review.
 
 The architecture demonstrates network segmentation, least-privilege access controls, private subnet isolation, and defense-in-depth security principles.
+
+## Step 21 – Assess EC2 Resources for Live Connectivity Testing
+
+![EC2 Instance Inventory](images/21-ec2-instance-inventory.png)
+
+**Figure 21 – EC2 Resource Assessment:** Reviewed the Amazon EC2 Instances dashboard in the N. Virginia (`us-east-1`) region to identify existing compute resources available for network connectivity testing.
+
+Confirmed that no EC2 instances were deployed in the region.
+
+This assessment established the need for temporary test endpoints to validate web-to-application communication on TCP port `8080` and application-to-database communication on TCP port `5432`.
+
+The next phase focuses on cost-controlled deployment and live verification of the three-tier network architecture.
