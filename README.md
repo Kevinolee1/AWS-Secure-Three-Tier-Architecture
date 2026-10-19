@@ -196,7 +196,7 @@ Confirmed that only one inbound rule exists, supporting least-privilege access c
 
 ## Step 17 – Verify Database Security Group Inbound Rules
 
-![Database Security Group Inbound Verification](images/17-db-sg-inbound-verification.png)
+![Database Security Group Inbound Verification](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/aa4fc9ef782aea57b191d130839010cc2c4e8cba/Screenshot%202026-10-18%20202715.png)
 
 **Figure 17 – Database Security Group Inbound Verification:** Verified that `CloudSecurity-DB-SG` permits inbound PostgreSQL traffic on TCP port `5432` exclusively from `CloudSecurity-App-SG`.
 
