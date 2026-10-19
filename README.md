@@ -128,7 +128,7 @@ These rules support communication between the web, application, and database tie
 
 ## Step 11 – Configure Application Network ACL Outbound Rules
 
-![Application Network ACL Outbound Rules](images/11-app-nacl-outbound-rules.png)
+![Application Network ACL Outbound Rules](https://github.com/Kevinolee1/AWS-Secure-Three-Tier-Architecture/blob/623f305cf8830cf0deef0bca8a284bf926dcebd6/Screenshot%202026-10-18%20191540.png)
 
 **Figure 11 – Application Network ACL Outbound Configuration:** Configured `CloudSecurity-App-NACL` with outbound rule `100` allowing TCP ephemeral ports `1024–65535` to the web subnet (`10.0.1.0/24`) and rule `110` allowing PostgreSQL traffic on TCP port `5432` to the database subnet (`10.0.2.0/24`).
 
