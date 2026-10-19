@@ -126,4 +126,62 @@ The existing rule `100` continues to permit web-to-application traffic on TCP po
 
 These rules support communication between the web, application, and database tiers while accounting for the stateless behavior of AWS Network ACLs. The default deny rule blocks unmatched inbound traffic.
 
-Verified that both rules were saved successfully in the AWS VPC console.
+## Step 11 – Configure Application Network ACL Outbound Rules
+
+![Application Network ACL Outbound Rules](images/11-app-nacl-outbound-rules.png)
+
+**Figure 11 – Application Network ACL Outbound Configuration:** Configured `CloudSecurity-App-NACL` with outbound rule `100` allowing TCP ephemeral ports `1024–65535` to the web subnet (`10.0.1.0/24`) and rule `110` allowing PostgreSQL traffic on TCP port `5432` to the database subnet (`10.0.2.0/24`).
+
+These rules support application-to-database communication and return traffic to the web tier while enforcing subnet-level network segmentation.
+
+Verified that unmatched outbound traffic is denied by the default Network ACL rule.
+
+## Step 12 – Associate Application Network ACL with Application Subnet
+
+![Application Network ACL Subnet Association](images/12-app-nacl-subnet-association.png)
+
+**Figure 12 – Application Network ACL Subnet Association:** Successfully associated the custom `CloudSecurity-App-NACL` with `CloudSecurity-App-Subnet` (`10.0.3.0/24`) within `CloudSecurity-VPC`.
+
+This association replaces the subnet's previous default Network ACL and applies the custom inbound and outbound filtering rules configured in earlier steps.
+
+The configuration establishes dedicated subnet-level access controls for the application tier, supporting network segmentation and defense-in-depth security across the three-tier AWS architecture.
+
+Verified that the AWS console displays the correct subnet association.
+
+## Step 13 – Configure Database Network ACL Inbound Rules
+
+![Database Network ACL Inbound Rules](images/13-db-nacl-inbound-rules.png)
+
+**Figure 13 – Database Network ACL Inbound Configuration:** Updated `CloudSecurity-Private-NACL` to permit PostgreSQL traffic on TCP port `5432` from the application subnet (`10.0.3.0/24`).
+
+Rule `100` restricts database-bound traffic to the application subnet, while the default deny rule blocks unmatched inbound connections.
+
+This configuration strengthens network segmentation by defining a controlled application-to-database communication path within the three-tier AWS architecture.
+
+Verified that the updated inbound rule was saved successfully in the AWS VPC console.
+
+## Step 14 – Configure Database Network ACL Outbound Return Traffic
+
+![Database Network ACL Outbound Rules](images/14-db-nacl-outbound-rules.png)
+
+**Figure 14 – Database Network ACL Outbound Configuration:** Updated `CloudSecurity-Private-NACL` to allow outbound TCP traffic on ephemeral ports `1024–65535` to the application subnet (`10.0.3.0/24`).
+
+Rule `100` supports PostgreSQL response traffic returning from the database tier to the application tier. The default deny rule blocks unmatched outbound connections.
+
+Together with the inbound PostgreSQL rule configured in Step 13, this establishes the intended subnet-level filtering configuration for application-to-database communication.
+
+Verified that AWS successfully saved the updated outbound rule.
+
+## Step 15 – Configure Web Security Group Outbound Rules
+
+![Web Security Group Outbound Rules](images/15-web-sg-outbound-rules.png)
+
+**Figure 15 – Web Security Group Outbound Configuration:** Updated `CloudSecurity-Web-SG` to allow outbound TCP traffic on port `8080` exclusively to `CloudSecurity-App-SG`.
+
+Removed the default unrestricted outbound rule permitting all traffic to `0.0.0.0/0`.
+
+This configuration applies the principle of least privilege by restricting outbound network access to the application tier, supporting controlled communication and defense-in-depth security within the three-tier AWS architecture.
+
+Verified that the AWS console displays only the intended outbound security group rule.
+
+
